@@ -4,11 +4,10 @@ export const Loading = () => {
   return (
     <div className="h-full w-full flex flex-col justify-center items-center">
       <Image
-        src="/logo.svg"
+        src="/loader.svg"
         alt="logo"
-        width={100}
-        height={100}
-        className="animate-bounce duration-700"
+        width={170}
+        height={170}
       />
     </div>
   );
