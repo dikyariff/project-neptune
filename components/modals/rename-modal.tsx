@@ -38,7 +38,7 @@ export const RenameModal = () => {
       title,
     })
       .then(() => {
-        toast.success("Board renaned!");
+        toast.success("Board renamed!");
         onClose();
       })
       .catch(() => toast.error("Failed to rename board!"));
