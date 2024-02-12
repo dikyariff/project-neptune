@@ -26,7 +26,7 @@ export async function POST(req: Request) {
   };
 
   const userInfo = {
-    name: user.firstName || "Anon",
+    name: user.firstName || "Anonym",
     picture: user.imageUrl
   };
 
