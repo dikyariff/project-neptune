@@ -1,7 +1,7 @@
 "use clients";
 
 import { memo } from "react";
-import { BringToFront, SendToBack, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 import { Camera, Color } from "@/types/canvas";
 import { useMutation, useSelf } from "@/liveblocks.config";
@@ -20,12 +20,6 @@ interface SelectionToolsProps {
 export const SelectionTools = memo(
   ({ camera, setLastUsedColor }: SelectionToolsProps) => {
     const selection = useSelf((me) => me.presence.selection);
-
-    const moveToBack = useMutation((
-    {storage}
-    ) => {
-      const liveLayerIds = storage.get("layerIds")
-    }, [])
 
     const setFill = useMutation(
       ({ storage }, fill: Color) => {
@@ -61,18 +55,6 @@ export const SelectionTools = memo(
         }}
       >
         <ColorPicker onChange={setFill} />
-        <div className="flex flex-col gap-y-0.5">
-          <Hint label="Bring to front">
-            <Button variant="board" size="icon">
-              <BringToFront />
-            </Button>
-          </Hint>
-          <Hint label="Send to back" side="bottom">
-            <Button variant="board" size="icon">
-              <SendToBack />
-            </Button>
-          </Hint>
-        </div>
         <div className="flex items-center pl-2 ml-2 border-l border-neutral-200">
           <Hint label="Delete">
             <Button
